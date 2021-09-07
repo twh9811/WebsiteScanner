@@ -9,8 +9,3 @@ from tld import get_fld
 def get_domain_name(url):
     return get_fld(url)
 
-def main():
-    print(get_domain_name("https://www.google.com/"))
-
-main()
-
