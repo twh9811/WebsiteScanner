@@ -10,14 +10,22 @@ from nMap import *
 from robotTxt import *
 from whoIs import *
 import os
-
+import subprocess
+ROOT_DIRECTORY = 'Desktop'
 def writeFile(path, data):
     f = open(path, "w")
     f.write(data)
     f.close()
 
+def mkdir(name):
+    if os.path.isdir(name):
+        print("Directory already exists. Try a different name")
+    else:
+        subprocess.run(['mkdir', name])
+
 def generateReport(name, url, domainName, nmap, robotsTxt, whois):
-    path = input("Please enter where you want to store your file... ")
+    path = ROOT_DIRECTORY + "/" + name
+    mkdir(path)
     writeFile(path + "url.txt", url)
     writeFile(path + "domainName.txt", domainName)
     writeFile(path + "nmap.txt", nmap)
