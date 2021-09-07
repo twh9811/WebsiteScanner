@@ -6,8 +6,8 @@ The purpose of this file is to run the website scanner and generate a report.
 from websiteScanner import *
 
 def main():
-    name = input("Please enter the website name")
-    url = input("Please enter the website URL")
+    name = input("Please enter the website name: ")
+    url = input("Please enter the website URL: ")
     scanWebsite(name, url)
 
 main()

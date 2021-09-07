@@ -24,13 +24,13 @@ def mkdir(name):
         subprocess.run(['mkdir', name])
 
 def generateReport(name, url, domainName, nmap, robotsTxt, whois):
-    path = ROOT_DIRECTORY + "/" + name
-    mkdir(path)
-    writeFile(path + "url.txt", url)
-    writeFile(path + "domainName.txt", domainName)
-    writeFile(path + "nmap.txt", nmap)
-    writeFile(path + "robots.txt", robotsTxt)
-    writeFile(path + "whois.txt", whois)
+    # path = ROOT_DIRECTORY + "/" + name
+    # mkdir(path)
+    writeFile("url.txt", url)
+    writeFile("domainName.txt", domainName)
+    writeFile("nmap.txt", nmap)
+    writeFile("robots.txt", robotsTxt)
+    writeFile("whois.txt", whois)
 
 def scanWebsite(name, url):
     domainName = get_domain_name(url)
