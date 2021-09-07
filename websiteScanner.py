@@ -30,7 +30,7 @@ def mkdir(name):
 
 def generateReport(name, url, domainName, nmap, robotsTxt, whois, ip):
     mkdir(name)
-    comProcess = subprocess.run('pwd', shell=True, capture_output=True, cwd=currentDirectory)
+    comProcess = subprocess.run('pwd', capture_output=True)
     currentD = comProcess.stdout.decode()
     path = currentD + "name"
     writeFile(path + "/BasicInformation.txt", "URL: " + url + "\n")
