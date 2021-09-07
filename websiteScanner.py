@@ -29,14 +29,16 @@ def mkdir(name):
         subprocess.run(['mkdir', name])
 
 def generateReport(name, url, domainName, nmap, robotsTxt, whois, ip):
-    # path = ROOT_DIRECTORY + "/" + name
-    # mkdir(path)
-    writeFile("BasicInformation.txt", "URL: " + url + "\n")
-    editFile("BasicInformation.txt", "DOMAIN: " + domainName + "\n")
-    editFile("BasicInformation.txt", "IP: " + ip + "\n")
-    writeFile("nmap.txt", nmap)
-    writeFile("robots.txt", robotsTxt)
-    writeFile("whois.txt", whois)
+    mkdir(name)
+    comProcess = subprocess.run('pwd', shell=True, capture_output=True, cwd=currentDirectory)
+    currentD = comProcess.stdout.decode()
+    path = currentD + "name"
+    writeFile(path + "/BasicInformation.txt", "URL: " + url + "\n")
+    editFile(path + "/BasicInformation.txt", "DOMAIN: " + domainName + "\n")
+    editFile(path + "/BasicInformation.txt", "IP: " + ip + "\n")
+    writeFile(path + "/nmap.txt", nmap)
+    writeFile(path + "/robots.txt", robotsTxt)
+    writeFile(path + "/whois.txt", whois)
 
 def scanWebsite(name, url):
     domainName = get_domain_name(url)
