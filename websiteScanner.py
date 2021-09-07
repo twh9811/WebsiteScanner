@@ -17,17 +17,23 @@ def writeFile(path, data):
     f.write(data)
     f.close()
 
+def editFile(path, data):
+    f = open(path, "a")
+    f.write(data)
+    f.close()
+
 def mkdir(name):
     if os.path.isdir(name):
         print("Directory already exists. Try a different name")
     else:
         subprocess.run(['mkdir', name])
 
-def generateReport(name, url, domainName, nmap, robotsTxt, whois):
+def generateReport(name, url, domainName, nmap, robotsTxt, whois, ip):
     # path = ROOT_DIRECTORY + "/" + name
     # mkdir(path)
-    writeFile("url.txt", url)
-    writeFile("domainName.txt", domainName)
+    writeFile("BasicInformation.txt", "URL: " + url)
+    editFile("BasicInformation.txt", "DOMAIN: " + domainName)
+    editFile("BasicInformation.txt", "IP: " + ip)
     writeFile("nmap.txt", nmap)
     writeFile("robots.txt", robotsTxt)
     writeFile("whois.txt", whois)
@@ -37,5 +43,5 @@ def scanWebsite(name, url):
     websiteIP = get_ip_address(url)
     nMap = scanNMap("-F", websiteIP)
     robotFile = getRobotsTxt(url)
-    whoisScan = get_whois(url)
-    generateReport(name, url, domainName, nMap, robotFile, whoisScan)
+    whoisScan = get_whois(domainName)
+    generateReport(name, url, domainName, nMap, robotFile, whoisScan, websiteIP)
