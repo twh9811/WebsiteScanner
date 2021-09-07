@@ -1,5 +1,6 @@
 """
 The purpose of this file is to run the whois command on linux
+The URL must be the domain name only.
 
 @author Travis Hill
 """

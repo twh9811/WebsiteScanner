@@ -4,10 +4,9 @@ Gathering which ports are open on the webserver in the process.
 
 @author Travis Hill
 """
-import os
+import subprocess
 
 def scanNMap(settings, ipAddress):
-    command = "nmap " + settings + " " + ipAddress
-    process = os.popen(command)
-    results = str(process.read())
+    process = subprocess.run(["nmap", settings, ipAddress], capture_output=True)
+    results = process.stdout.decode()
     return results

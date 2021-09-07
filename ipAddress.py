@@ -3,11 +3,10 @@ The purpose of this file is to obtain a websites IP address using the host comma
 
 @author Travis Hill
 """
-import os
+import subprocess
 
 def get_ip_address(url):
-    command = 'host ' + url
-    process = os.popen(command)
-    results = str(process.read())
+    process = subprocess.run(["host", url], capture_output=True)
+    results = process.stdout.decode()
     splitResults = results.split(" ")
     return splitResults[3].splitlines()[0]
