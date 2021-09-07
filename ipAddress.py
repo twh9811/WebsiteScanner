@@ -11,4 +11,4 @@ def get_ip_address(url):
     process = os.popen(command)
     results = str(process.read())
     splitResults = results.split(" ")
-    return splitResults[3]
+    return splitResults[3].splitlines()[0]
