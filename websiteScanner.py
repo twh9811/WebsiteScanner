@@ -40,7 +40,7 @@ def generateReport(name, url, domainName, nmap, robotsTxt, whois, ip):
 
 def scanWebsite(name, url):
     domainName = get_domain_name(url)
-    websiteIP = get_ip_address(url)
+    websiteIP = get_ip_address(domainName)
     nMap = scanNMap("-F", websiteIP)
     robotFile = getRobotsTxt(url)
     whoisScan = get_whois(domainName)
