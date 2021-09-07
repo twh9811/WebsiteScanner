@@ -1,6 +1,8 @@
 """
 The purpose of this file is to get the robots.txt file some websites have.
 This gives the user more information about the website if they wish to scrape it.
+
+@author Travis Hill
 """
 import urllib.request
 import io
