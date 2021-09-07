@@ -1,6 +1,5 @@
 """
-The purpose of this file is to obtain the websites IP address
-using the host command in Linux
+The purpose of this file is to obtain a websites IP address using the host command in Linux
 
 @author Travis Hill
 """

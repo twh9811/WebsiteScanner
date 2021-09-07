@@ -1,6 +1,5 @@
 """
-The purpose of this file is to get the top level domain of the website
-for use in the whois linux command.
+The purpose of this file is to get the top level domain of the website.
 
 @author Travis Hill
 """

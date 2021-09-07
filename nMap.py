@@ -1,5 +1,5 @@
 """
-The purpose of this file is to take the ipAddress and run it through an nMap scan.
+The purpose of this file is to take the an ip address and run it through an nMap scan.
 Gathering which ports are open on the webserver in the process.
 
 @author Travis Hill
