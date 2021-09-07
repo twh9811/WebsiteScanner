@@ -31,9 +31,9 @@ def mkdir(name):
 def generateReport(name, url, domainName, nmap, robotsTxt, whois, ip):
     # path = ROOT_DIRECTORY + "/" + name
     # mkdir(path)
-    writeFile("BasicInformation.txt", "URL: " + url)
-    editFile("BasicInformation.txt", "DOMAIN: " + domainName)
-    editFile("BasicInformation.txt", "IP: " + ip)
+    writeFile("BasicInformation.txt", "URL: " + url + "\n")
+    editFile("BasicInformation.txt", "DOMAIN: " + domainName + "\n")
+    editFile("BasicInformation.txt", "IP: " + ip + "\n")
     writeFile("nmap.txt", nmap)
     writeFile("robots.txt", robotsTxt)
     writeFile("whois.txt", whois)
