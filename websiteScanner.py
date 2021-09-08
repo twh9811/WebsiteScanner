@@ -35,7 +35,7 @@ def getCurrentDirectory():
 
 def generateReport(name, url, domainName, nmap, robotsTxt, whois, ip):
     mkdir(name)
-    currentD = getCurrentDirectory
+    currentD = getCurrentDirectory()
     path = currentD + "/" + name
     writeFile(path + "/BasicInformation.txt", "URL: " + url + "\n")
     editFile(path + "/BasicInformation.txt", "DOMAIN: " + domainName + "\n")
