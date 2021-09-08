@@ -32,7 +32,7 @@ def generateReport(name, url, domainName, nmap, robotsTxt, whois, ip):
     mkdir(name)
     comProcess = subprocess.run('pwd', capture_output=True)
     currentD = comProcess.stdout.decode()
-    path = currentD + "name"
+    path = currentD + "/" + name
     writeFile(path + "/BasicInformation.txt", "URL: " + url + "\n")
     editFile(path + "/BasicInformation.txt", "DOMAIN: " + domainName + "\n")
     editFile(path + "/BasicInformation.txt", "IP: " + ip + "\n")
