@@ -8,6 +8,10 @@ from websiteScanner import *
 def main():
     name = input("Please enter the website name: ")
     url = input("Please enter the website URL: ")
-    scanWebsite(name, url)
+    ipAns = input("Do you want multiple IPs to be recorded? (Y/N): ")
+    if ipAns.upper() == "Y":
+        scanWebsite(name, url, True)
+    else:
+        scanWebsite(name, url)
 
 main()
