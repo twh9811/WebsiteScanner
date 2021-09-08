@@ -11,7 +11,7 @@ from robotTxt import *
 from whoIs import *
 import os
 import subprocess
-ROOT_DIRECTORY = 'Desktop'
+
 def writeFile(path, data):
     f = open(path, "w")
     f.write(data)
@@ -28,10 +28,14 @@ def mkdir(name):
     else:
         subprocess.run(['mkdir', name])
 
+def getCurrentDirectory():
+    comProcess = subprocess.run('pwd', capture_output=True)
+    currentD = comProcess.stdout.decode().strip()
+    return currentD
+
 def generateReport(name, url, domainName, nmap, robotsTxt, whois, ip):
     mkdir(name)
-    comProcess = subprocess.run('pwd', capture_output=True)
-    currentD = comProcess.stdout.decode()
+    currentD = getCurrentDirectory
     path = currentD + "/" + name
     writeFile(path + "/BasicInformation.txt", "URL: " + url + "\n")
     editFile(path + "/BasicInformation.txt", "DOMAIN: " + domainName + "\n")
