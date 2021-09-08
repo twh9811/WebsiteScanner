@@ -44,9 +44,9 @@ def generateReport(name, url, domainName, nmap, robotsTxt, whois, ip):
     writeFile(path + "/robots.txt", robotsTxt)
     writeFile(path + "/whois.txt", whois)
 
-def scanWebsite(name, url, multiple=False):
+def scanWebsite(name, url):
     domainName = get_domain_name(url)
-    websiteIP = get_ip_address(domainName, multiple)
+    websiteIP = get_ip_address(domainName)
     nMap = scanNMap("-F", websiteIP)
     robotFile = getRobotsTxt(url)
     whoisScan = get_whois(domainName)

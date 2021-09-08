@@ -5,11 +5,7 @@ The purpose of this file is to obtain a websites IP address using the host comma
 """
 import subprocess
 
-def get_ip_address(domainName, multiple=False):
-    if multiple:
-        process = subprocess.run(["host", domainName], capture_output=True)
-        results = process.stdout.decode()
-        return results
+def get_ip_address(domainName):
     process = subprocess.run(["host", domainName], capture_output=True)
     results = process.stdout.decode()
     splitResults = results.split(" ")
